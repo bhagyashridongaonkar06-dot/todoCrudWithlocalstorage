@@ -81,7 +81,7 @@ export class TodoLSComponent implements OnInit {
       todoId: this._uuidService.getUUid(),
       isCompleted: this.isCompletedRef.nativeElement.value === 'yes' ? true : false
     }
-    cl(newTodo)
+    // cl(newTodo)
     this.todosArr.unshift(newTodo)
     localStorage.setItem('todosArr', JSON.stringify(this.todosArr))
     this.todoItemRef.nativeElement.value = ''
@@ -106,14 +106,14 @@ export class TodoLSComponent implements OnInit {
   onUpdateTodo() {
     let updateId = localStorage.getItem('editId')
 
-    cl(updateId)
+    // cl(updateId)
     if (updateId) {
       let updatedObj = {
         todoItem: this.todoItemRef.nativeElement.value,
         todoId: updateId,
         isCompleted: this.isCompletedRef.nativeElement.value === 'yes' ? true : false
       }
-      cl(updatedObj)
+      // cl(updatedObj)
 
       let getIdx = this.todosArr.findIndex(e => e.todoId === updateId)
       if (getIdx !== -1) {
